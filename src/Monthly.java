@@ -4,8 +4,8 @@ public class Monthly {
 
     public static void main(String[] args) {
         int day = 30;
-        double starting = 1400000;
-        float profitPercentage = 8;
+        double starting = 14000000;
+        float profitPercentage = 4;
         float lossPercentage = 20;
         double targetBalance = starting;
         double lossLimit;
