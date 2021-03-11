@@ -4,24 +4,26 @@ public class Monthly {
 
     public static void main(String[] args) {
         int day = 30;
-        double starting = 14000000;
-        float profitPercentage = 4;
+        double starting = 150000000;
+        float openPercentage = 1;
+        float profitPercentage = 3;
         float lossPercentage = 20;
         double targetBalance = starting;
         double lossLimit;
 
-        System.out.println("Starting : " + Helper.getFormattedCurrency(starting));
-        System.out.println("Open nominal PerTrade: " + 1 + "%");
-        System.out.println("Profit Target PerTrade: " + profitPercentage + "%");
-        System.out.println("Max Loss PerTrade: " + lossPercentage + "%");
+        System.out.println("Starting Balance : " + Helper.getFormattedCurrency(starting));
+        System.out.println("Open Percentage : " + openPercentage + "%");
+        System.out.println("Target Percentage PerTrading : " + profitPercentage + "%");
+        System.out.println("Max Loss Percentage : " + lossPercentage + "%");
         System.out.println();
         for (int i = 0; i < day; i++) {
             starting = targetBalance;
             targetBalance += (targetBalance * (profitPercentage / 100));
             lossLimit = starting - (starting * (lossPercentage / 100));
-            System.out.println("Day-" + (i + 1));
-            System.out.println("Balance = " + Helper.getFormattedCurrency(starting));
-            Helper.printDetails(starting, targetBalance, lossLimit);
+            System.out.println("Trading-#" + (i + 1));
+            System.out.println("Current Balance =  " + Helper.getFormattedCurrency(starting));
+            Helper.printDetails(starting, openPercentage, targetBalance, lossLimit);
+            System.out.println();
         }
     }
 

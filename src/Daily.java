@@ -8,6 +8,7 @@ public class Daily {
 
         double starting;
         float percentage;
+        float openPercentage = 1;
 
         Scanner inputNumScanner = new Scanner(System.in);
 
@@ -26,7 +27,7 @@ public class Daily {
         double targetBalance = starting + (starting*(percentage/100));
         double lossLimit = starting - (starting * (percentage / 100));
 
-        Helper.printDetails(starting, targetBalance, lossLimit);
+        Helper.printDetails(starting, openPercentage, targetBalance, lossLimit);
     }
 
 
